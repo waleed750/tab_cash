@@ -12,6 +12,8 @@ class AppColors{
     static  Color black =  HexColor('000000');
     static  Color redOrange =  HexColor('F92729');
     static  Color wing =  HexColor('FF8321');
+    static  Color grey =  Colors.grey;
+
 
 
 
