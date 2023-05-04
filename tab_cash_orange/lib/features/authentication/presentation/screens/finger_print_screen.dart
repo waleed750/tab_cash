@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
 
 class FingerprintScreen extends StatefulWidget {
@@ -11,7 +10,6 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
   final LocalAuthentication _localAuthentication = LocalAuthentication();
   bool _isFingerprintEnabled = false;
   String _authError = '';
-  var _availableBiometrics;
 
   Future<void> _checkBiometrics() async {
     bool canCheckBiometrics;
@@ -39,14 +37,17 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
     try {
       isAuthenticated = await _localAuthentication.authenticate(
         localizedReason: 'Please authenticate to access your account',
-
         options: const AuthenticationOptions(
           stickyAuth: true , 
           useErrorDialogs: true
         )
         
       );
-      print("Loaded");
+      if(isAuthenticated){
+
+      }else{
+        
+      }
     } catch (e) {
       setState(() {
         _authError = 'Error: $e';
@@ -57,9 +58,7 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
 
     if (isAuthenticated) {
       // Fingerprint authentication successful
-      
-      // }
-     await _getAvailableBiometric();
+      // Now you can insert the fingerprint data into your database
     } else {
       setState(() {
         _authError = 'Authentication failed';
@@ -67,21 +66,6 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
     }
   }
 
-  Future<void> _getAvailableBiometric() async {
-  List<BiometricType> availableBiometric;
-
-  try{
-
-    availableBiometric = await _localAuthentication.getAvailableBiometrics();
-    setState(() {
-    _availableBiometrics = availableBiometric;
-  });
-  
-  } on PlatformException catch (e){
-    print(e);
-  }
-  
-}
   @override
   void initState() {
     super.initState();
