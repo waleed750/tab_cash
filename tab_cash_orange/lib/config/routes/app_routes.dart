@@ -6,6 +6,7 @@ import 'package:tab_cash_orange/features/authentication/presentation/screens/hom
 
 import '../../core/utils/app_strings.dart';
 import '../../features/authentication/presentation/screens/splash_screen.dart';
+import 'package:tab_cash_orange/injection_container.dart' as di;
 
 class Routes {
   static const String initialRoute = '/';
@@ -21,8 +22,9 @@ class AppRoutes {
         );
       case Routes.homeRoute:
         return MaterialPageRoute(
+          
             builder: (context) => BlocProvider(
-              create: (context) => AuthenticationCubit() ,
+              create: (context) => di.sl<AuthenticationCubit>() ,
               child: FingerprintScreen(), 
         ));
       default:
