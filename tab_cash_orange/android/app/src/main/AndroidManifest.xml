@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tab_cash_orange">
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    
    <application
         android:label="tab_cash_orange"
         android:name="${applicationName}"

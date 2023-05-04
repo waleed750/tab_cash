@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tab_cash_orange/features/authentication/presentation/cubit/authentication_cubit.dart';
+import 'package:tab_cash_orange/features/authentication/presentation/screens/finger_print_screen.dart';
 import 'package:tab_cash_orange/features/authentication/presentation/screens/home_screen.dart';
 
 import '../../core/utils/app_strings.dart';
@@ -22,7 +23,7 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
               create: (context) => AuthenticationCubit() ,
-              child: const HomeScreen(), 
+              child: FingerprintScreen(), 
         ));
       default:
         return onUndefinedRoute();
