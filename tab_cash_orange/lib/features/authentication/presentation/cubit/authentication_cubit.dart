@@ -25,7 +25,7 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
     
     // bottom navigation bar Items
     int currentIndex =0;
-
+  
   List<BottomNavigationBarItem> bottomItem =[
     BottomNavigationBarItem(
         icon: Icon(
@@ -63,21 +63,11 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
   ];
 
   void ChangeBottomNavBar(int index){
+    emit(BottomNavInitiateState());
     currentIndex =index;
-    if(index == 1){
-      CardsScreen();
-    }else if(index == 2){
-      ServicesScreeen();
-    }else if(index == 3){
-      ExpensesScreen();
-    }else if(index == 4){
-      GamesScreen();
-    }
-    else{
-      HomeScreen();
-    }
+    
     print(currentIndex);
-    emit(BottomNavState());
+    emit(BottomNavChangeState());
   }
 
   List<Widget> Screens =[

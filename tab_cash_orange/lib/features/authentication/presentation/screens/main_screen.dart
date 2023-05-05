@@ -13,10 +13,10 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      var cubit = BlocProvider.of<AuthenticationCubit>(context);
-    return BlocListener<AuthenticationCubit, AuthenticationState>(
+    return BlocConsumer<AuthenticationCubit, AuthenticationState>(
        listener: (BuildContext context, state) {},
        
-      child: Scaffold(
+      builder: (context,state) => Scaffold(
        
         body: cubit.Screens[cubit.currentIndex],
          bottomNavigationBar: BottomNavigationBar(

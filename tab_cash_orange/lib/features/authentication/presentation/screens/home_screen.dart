@@ -3,26 +3,23 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tab_cash_orange/core/utils/app_colors.dart';
+import 'package:tab_cash_orange/core/utils/asset_manager.dart';
 import 'package:tab_cash_orange/core/utils/icon_manager.dart';
 import 'package:tab_cash_orange/features/authentication/presentation/cubit/authentication_cubit.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:tab_cash_orange/core/utils/media_extension.dart';
 // import 'package:tab_cash_orange/core/utils/AppColors.dart';
 import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/hex_color.dart';
 import '../widgets/circle_dot.dart';
 import '../widgets/person_container.dart';
 import '../widgets/search_form_field.dart';
 
 class HomeScreen extends StatelessWidget {
-<<<<<<< Updated upstream
-  HomeScreen({super.key});
-
   TextEditingController searchController = TextEditingController();
 
-=======
-   HomeScreen();
-  int currentIndex = 0 ; 
->>>>>>> Stashed changes
+
+  
+  
   @override
   Widget build(BuildContext context) {
     var cubit = BlocProvider.of<AuthenticationCubit>(context);
@@ -31,13 +28,15 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.buttonColor,
         appBar: AppBar(
+          
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: AppColors.buttonColor,
           ),
           backgroundColor: AppColors.buttonColor,
           elevation: 0,
+          automaticallyImplyLeading: false,
         ),
-<<<<<<< Updated upstream
+
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -314,7 +313,7 @@ class HomeScreen extends StatelessWidget {
                                 Padding(
                                   padding:
                                       EdgeInsets.only(right: context.width * .1),
-                                  child: Image.asset("assets/images/visa.png"),
+                                  child: Image.asset(AssetManager.visaImage),
                                 ),
                               ],
                             ),
@@ -338,9 +337,15 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-       
-=======
-        body: Center(child: Text("FingerPrint : ${cubit.fingerPrint}")),
+        
+      ),
+    );
+  }
+}
+
+//
+/*
+body: Center(child: Text("FingerPrint : ${cubit.fingerPrint}")),
         bottomNavigationBar:BottomNavigationBar(
           fixedColor: AppColors.buttonColor,
           items:[
@@ -361,11 +366,7 @@ class HomeScreen extends StatelessWidget {
   )
 
         ])
->>>>>>> Stashed changes
-      ),
-    );
-  }
-}
+ */
 ///crop free  //Monitoring
 
 

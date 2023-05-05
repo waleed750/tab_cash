@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:hexcolor/hexcolor.dart';
+
+import '../../../../core/utils/hex_color.dart';
+
 
 class SearchFormField extends StatelessWidget {
   final TextEditingController controller;

@@ -28,7 +28,11 @@ class AuthenticationCheckFingerPrintError extends AuthenticationState {
   });
 }
 
- class BottomNavState extends AuthenticationState {}
+
+ class BottomNavInitiateState extends AuthenticationState {}
+
+ class BottomNavChangeState extends AuthenticationState {}
+
 
  class HomeSucessState extends AuthenticationState {}
 

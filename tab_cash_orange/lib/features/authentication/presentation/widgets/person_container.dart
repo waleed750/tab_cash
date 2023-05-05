@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:tab_cash_orange/core/utils/asset_manager.dart';
 import 'package:tab_cash_orange/core/utils/media_extension.dart';
 
 import '../../../../core/utils/hex_color.dart';
@@ -14,7 +15,7 @@ class PersonContainer extends StatelessWidget {
       CircleAvatar(
         radius: context.width * .068,
         backgroundColor: HexColor("#C67D69"),
-        child: Image.asset("assets/images/person.png"),
+        child: Image.asset('${AssetManager.personImage}'),
       ),
       SizedBox(
         height: 2,
