@@ -22,8 +22,13 @@ class AppRoutes {
       case Routes.homeRoute:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
+<<<<<<< Updated upstream
               create: (context) => AuthenticationCubit() ,
               child:  MainScreen(), 
+=======
+              create: (context) => di.sl<AuthenticationCubit>() ,
+              child: HomeScreen(), 
+>>>>>>> Stashed changes
         ));
       default:
         return onUndefinedRoute();

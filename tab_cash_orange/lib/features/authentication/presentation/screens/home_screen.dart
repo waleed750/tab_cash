@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tab_cash_orange/core/utils/app_colors.dart';
+import 'package:tab_cash_orange/core/utils/icon_manager.dart';
 import 'package:tab_cash_orange/features/authentication/presentation/cubit/authentication_cubit.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:tab_cash_orange/core/utils/media_extension.dart';
@@ -11,10 +14,15 @@ import '../widgets/person_container.dart';
 import '../widgets/search_form_field.dart';
 
 class HomeScreen extends StatelessWidget {
+<<<<<<< Updated upstream
   HomeScreen({super.key});
 
   TextEditingController searchController = TextEditingController();
 
+=======
+   HomeScreen();
+  int currentIndex = 0 ; 
+>>>>>>> Stashed changes
   @override
   Widget build(BuildContext context) {
     var cubit = BlocProvider.of<AuthenticationCubit>(context);
@@ -29,6 +37,7 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: AppColors.buttonColor,
           elevation: 0,
         ),
+<<<<<<< Updated upstream
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -330,6 +339,29 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
        
+=======
+        body: Center(child: Text("FingerPrint : ${cubit.fingerPrint}")),
+        bottomNavigationBar:BottomNavigationBar(
+          fixedColor: AppColors.buttonColor,
+          items:[
+          BottomNavigationBarItem(icon: SvgPicture.asset(
+    IconManager.homeIcon,
+    height: 22,
+    color: currentIndex == 0 ?   AppColors.buttonColor : Colors.black ,
+
+  ),
+  label: "Home"
+  ),
+  BottomNavigationBarItem(icon: SvgPicture.asset(
+    IconManager.expensesIcon, 
+    height: 22,
+    color: Colors.black,
+  ),
+  label: "expenses"
+  )
+
+        ])
+>>>>>>> Stashed changes
       ),
     );
   }

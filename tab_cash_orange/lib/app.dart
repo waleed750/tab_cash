@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       // builder: ,
       // theme: ,
       title: AppStrings.appTitle,
-      initialRoute: Routes.testRoute,
+      initialRoute: Routes.homeRoute,
       onGenerateRoute: AppRoutes.onGenerateRoute,
       locale: const Locale(AppStrings.englishCode),
       supportedLocales: AppLocalizationsSetup.supportedLocales,
