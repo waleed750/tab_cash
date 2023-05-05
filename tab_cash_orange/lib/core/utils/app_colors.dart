@@ -7,14 +7,12 @@ class AppColors{
     static  Color backgroundColor =  HexColor('FFFFFF');
     static  Color disabledColor =  HexColor('DDE4EE');
     static  Color buttonColor =  HexColor('2255EE');
-
+    static  Color secondColor =  HexColor("05F7E8");
 
     static  Color black =  HexColor('000000');
     static  Color redOrange =  HexColor('F92729');
     static  Color wing =  HexColor('FF8321');
-    static  Color grey =  Colors.grey;
-
-
+    static  Color textColor =   Colors.grey.shade300 ;
 
 
 }

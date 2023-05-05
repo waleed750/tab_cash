@@ -26,5 +26,39 @@ class AuthenticationCheckFingerPrintError extends AuthenticationState {
   AuthenticationCheckFingerPrintError({
     required this.error,
   });
-  
 }
+
+ class BottomNavState extends AuthenticationState {}
+
+ class HomeSucessState extends AuthenticationState {}
+
+ class CardsSucessState extends AuthenticationState {}
+
+ class ServicesSucessState extends AuthenticationState {}
+
+ class ExpensesSucessState extends AuthenticationState {}
+
+ class GamesSucessState extends AuthenticationState {}
+
+class HomeErrorState extends AuthenticationState{
+  final String error ;
+  HomeErrorState(this.error);
+}
+
+class CardsErrorState extends AuthenticationState{
+  final String error ;
+  CardsErrorState(this.error);
+}
+class ServicesErrorState extends AuthenticationState{
+  final String error ;
+  ServicesErrorState(this.error);
+}
+class ExpensesErrorState extends AuthenticationState{
+  final String error ;
+  ExpensesErrorState(this.error);
+}
+class GamesErrorState extends AuthenticationState{
+  final String error ;
+  GamesErrorState(this.error);
+}
+ 
