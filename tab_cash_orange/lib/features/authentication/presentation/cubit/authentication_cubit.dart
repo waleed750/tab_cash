@@ -3,7 +3,10 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/icon_manager.dart';
 import '../screens/Games_screen.dart';
 import '../screens/cards_screen.dart';
 import '../screens/expenses_screen.dart';
@@ -24,43 +27,12 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
     //code for finger PRint 
     
     // bottom navigation bar Items
-    int currentIndex =0;
+    int currentIndex = 0;
+
+  int getCurrentIndex() => currentIndex;
+
   
-  List<BottomNavigationBarItem> bottomItem =[
-    BottomNavigationBarItem(
-        icon: Icon(
-          Icons.home_outlined,
-        ),
-        label: "Home",
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(
-          Icons.home_outlined,
-      ),
-      label: "Cards"
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(
-          Icons.home_outlined,
-      ),
-      label: "services"
-    ),
-
-   BottomNavigationBarItem(
-      icon: Icon(
-          Icons.home_outlined,
-      ),
-      label: "Expenses"
-    ),
-
-     BottomNavigationBarItem(
-      icon: Icon(
-          Icons.home_outlined,
-      ),
-      label: "Games"
-    ),
-   
-  ];
+  
 
   void ChangeBottomNavBar(int index){
     emit(BottomNavInitiateState());
