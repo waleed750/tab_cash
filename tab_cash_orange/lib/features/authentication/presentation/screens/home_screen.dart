@@ -344,12 +344,15 @@ class HomeScreen extends StatelessWidget {
 }
 
 //
+//! Code for Svg File 
 /*
 body: Center(child: Text("FingerPrint : ${cubit.fingerPrint}")),
         bottomNavigationBar:BottomNavigationBar(
           fixedColor: AppColors.buttonColor,
           items:[
-          BottomNavigationBarItem(icon: SvgPicture.asset(
+          BottomNavigationBarItem(icon:
+          !Here is The svg file 
+           SvgPicture.asset(
     IconManager.homeIcon,
     height: 22,
     color: currentIndex == 0 ?   AppColors.buttonColor : Colors.black ,
