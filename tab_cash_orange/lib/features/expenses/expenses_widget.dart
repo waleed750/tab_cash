@@ -13,22 +13,29 @@ class DonutChartExample extends StatelessWidget {
   //   {'category': 'Shopping', 'amount': 75.0},
   // ];
    
-    var _totalExpenses = 2000; // replace with actual total expenses
-    var _maxExpenses = 5000; // replace with max expenses
+    int totalExpenses ; // replace with actual total expenses
+    int maxExpenses ;
+    String montySelected;
+    DonutChartExample({
+      this.totalExpenses = 2000, 
+      this.maxExpenses = 7000 , 
+      required this.montySelected,
+    }); // replace with max expenses
     var data = [
-      _ChartData('David', 500),
-      _ChartData('Steve', 750),
-      _ChartData('Jack', 1000),
-      _ChartData('Others', 750)
+      _ChartData('Shopping', 500),
+      _ChartData('Send to card', 750),
+      _ChartData('Payments of Bills', 1000),
+      _ChartData('ATM withdrawal', 750),
+      _ChartData('Games', 750),
+      _ChartData('Others', 750),
+
+
     ];
     var _tooltip = TooltipBehavior(enable: true);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Donut Chart Example'),
-      ),
-      body: Center(
+    
+    return  Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -46,7 +53,21 @@ class DonutChartExample extends StatelessWidget {
                     xValueMapper: (_ChartData data, _) => data.x,
                     yValueMapper: (_ChartData data, _) => data.y,
                     name: 'Expenses',
-                    
+                    pointColorMapper: (_ChartData data, _) {
+                    if (data.x == 'Shopping') {
+                      return HexColor('FD95D3'); // set the color for Shooping's slice
+                    } else if (data.x == 'Send to card') {
+                      return HexColor('7AD3FF'); // set the color for Send to card's slice
+                    } else if (data.x == 'Games') {
+                      return HexColor('FE6C6C'); // set the color for Games's slice
+                    } else if (data.x == 'Payments of Bills') {
+                      return HexColor('FDCD95'); // set the color for Games's slice
+                    }else if (data.x == 'ATM withdrawal') {
+                      return HexColor('FFF972'); // set the color for Games's slice
+                    } else {
+                      return HexColor('99FFA3'); // set the color for Others' slice
+                    }
+                  },
                     strokeWidth: 100, // width of the donut
                     emptyPointSettings: EmptyPointSettings(
                       color: Colors.white, // make the center of the donut white
@@ -60,11 +81,11 @@ class DonutChartExample extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          '\$$_totalExpenses',
+                          '\$$totalExpenses',
                           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          'May' ,
+                          '$montySelected' ,
                           style: TextStyle(
                             color: HexColor('#454459'),
                             
@@ -80,12 +101,11 @@ class DonutChartExample extends StatelessWidget {
               ],
               ),
             ),
-            SizedBox(height: 20),
-            Text('Max Expenses: \$$_maxExpenses'),
+            SizedBox(height: 30),
+            Text('Max Expenses: \$$maxExpenses'),
           ],
         ),
-      ),
-    );
+      );
   }
 }
 

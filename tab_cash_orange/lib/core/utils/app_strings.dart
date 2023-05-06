@@ -3,6 +3,18 @@ class AppStrings{
   static const String undefinedRoute = "undefined_route";
   static const String appname = "app_name";
   static const String appTitle = "Tap Cash";
+  static const String expensesTitle = "expense_title";
+  static const String categorie = "categorie";
+  static const String history = "history";
+
+  //!Expenses Screen
+  static const String shopping= "shopping" ;
+  static const String shipping = "shipping" ;
+  static const String sendToCard = "send_to_card" ;
+  static const String games = "games";
+  static const String paymentOfBills = "payment_of_bills";
+  static const String atmWithDrawal = "atm_withdrawal";
+
 
 
   //! Words used in Logic 
