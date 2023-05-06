@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tab_cash_orange/features/authentication/presentation/screens/expenses_screen.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/icon_manager.dart';
@@ -20,11 +21,12 @@ class MainScreen extends StatelessWidget {
        
       builder: (context,state) => Scaffold(
        
-        body: cubit.Screens[cubit.currentIndex],
+        body: ExpensesScreen(),//cubit.Screens[cubit.currentIndex]
          bottomNavigationBar: BottomNavigationBar(
             showUnselectedLabels: true,
             unselectedItemColor: AppColors.black,
             selectedItemColor: AppColors.buttonColor,
+            
            currentIndex: cubit.currentIndex ,
             items:[
     BottomNavigationBarItem(
