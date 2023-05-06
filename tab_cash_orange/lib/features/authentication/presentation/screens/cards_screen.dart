@@ -13,6 +13,6 @@ class CardsScreen extends StatelessWidget {
     var cubit = BlocProvider.of<AuthenticationCubit>(context);
     return BlocListener<AuthenticationCubit, AuthenticationState>(
       listener: (BuildContext context, state) {},
-      child: Container());
+      child: Scaffold());
   }
 }

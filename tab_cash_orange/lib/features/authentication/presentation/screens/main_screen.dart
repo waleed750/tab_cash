@@ -14,20 +14,18 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     var cubit = BlocProvider.of<AuthenticationCubit>(context);
+    var cubit = BlocProvider.of<AuthenticationCubit>(context);
     return BlocConsumer<AuthenticationCubit, AuthenticationState>(
-       listener: (BuildContext context, state) {},
-       
-      builder: (context,state) => Scaffold(
-       
+      listener: (BuildContext context, state) {},
+      builder: (context, state) => Scaffold(
         body: cubit.Screens[cubit.currentIndex],
-         bottomNavigationBar: BottomNavigationBar(
+        bottomNavigationBar: BottomNavigationBar(
             showUnselectedLabels: true,
             unselectedItemColor: AppColors.black,
             selectedItemColor: AppColors.buttonColor,
-           currentIndex: cubit.currentIndex ,
-            items:[
-    BottomNavigationBarItem(
+            currentIndex: cubit.currentIndex,
+            items: [
+              BottomNavigationBarItem(
         icon: SvgPicture.asset(
     IconManager.homeIcon,
     height: 18,
@@ -63,12 +61,10 @@ class MainScreen extends StatelessWidget {
       label: "Games"
     ),
    
-  ],
+            ],
             onTap: (index) {
-              cubit.ChangeBottomNavBar(index) ;
-              
-            }
-          ),
+              cubit.ChangeBottomNavBar(index);
+            }),
       ),
     );
   }

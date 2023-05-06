@@ -10,16 +10,16 @@ import 'package:tab_cash_orange/core/utils/media_extension.dart';
 // import 'package:tab_cash_orange/core/utils/AppColors.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/hex_color.dart';
+import '../widgets/add_new_card_container.dart';
 import '../widgets/circle_dot.dart';
 import '../widgets/person_container.dart';
+import '../widgets/search_container.dart';
 import '../widgets/search_form_field.dart';
+import '../widgets/transformation_container.dart';
 
 class HomeScreen extends StatelessWidget {
   TextEditingController searchController = TextEditingController();
 
-
-  
-  
   @override
   Widget build(BuildContext context) {
     var cubit = BlocProvider.of<AuthenticationCubit>(context);
@@ -28,7 +28,6 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.buttonColor,
         appBar: AppBar(
-          
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: AppColors.buttonColor,
           ),
@@ -36,7 +35,6 @@ class HomeScreen extends StatelessWidget {
           elevation: 0,
           automaticallyImplyLeading: false,
         ),
-
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -51,41 +49,8 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.person_outline_outlined,
-                            size: 34,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          SearchFormField(
-                            controller: searchController,
-                            height: context.height * .05,
-                            hintText: "Search",
-                            prefixIcon: Icon(
-                              Icons.search,
-                              size: 25,
-                              color: HexColor("#5A5A5A"),
-                            ),
-                            width: context.width * .7,
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Icon(
-                            Icons.notifications_none,
-                            size: 34,
-                            color: Colors.white,
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
+                    SearchContainer(searchController: searchController),
+                    const SizedBox(
                       height: 16,
                     ),
                     Padding(
@@ -103,8 +68,8 @@ class HomeScreen extends StatelessWidget {
                       height: 8,
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 8),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -143,7 +108,7 @@ class HomeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircleDotContainer(
-                          color: AppColors.backgroundColor,
+                          color: AppColors.textColor,
                         ),
                         SizedBox(
                           width: 5,
@@ -155,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                           width: 5,
                         ),
                         CircleDotContainer(
-                          color: AppColors.backgroundColor,
+                          color: AppColors.textColor,
                         ),
                         SizedBox(
                           width: 5,
@@ -193,133 +158,11 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: context.height * .12,
                       ),
-                      Center(
-                        child: Container(
-                          width: context.width * .87,
-                          height: context.height * .16,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                  color: AppColors.buttonColor, width: 1)),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "Transfer to",
-                                        style: TextStyle(
-                                            fontSize: 17,
-                                            color: AppColors.black,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(6.0),
-                                        child: Icon(
-                                          Icons.qr_code_scanner_sharp,
-                                          size: 29,
-                                          color: AppColors.black,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Column(
-                                        children: [
-                                          CircleAvatar(
-                                            radius: context.width * .068,
-                                            backgroundColor: HexColor("#D9D9D9"),
-                                            child: Icon(Icons.add),
-                                          ),
-                                          SizedBox(
-                                            height: 2,
-                                          ),
-                                          Text(
-                                            "add",
-                                            style: TextStyle(
-                                              fontSize: 15,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      PersonContainer(name: "Ahmed"),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      PersonContainer(name: "Ahmed"),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      PersonContainer(name: "Ahmed"),
-                                    ],
-                                  ),
-                                ]),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
+                      const TransformationContainer(),
+                      const SizedBox(
                         height: 10,
                       ),
-                      Center(
-                        child: Container(
-                          width: context.width * .87,
-                          height: context.height * .1,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              gradient: LinearGradient(
-                                begin: Alignment.topRight,
-                                end: Alignment.bottomLeft,
-                                colors: [
-                                  AppColors.secondColor,
-                                  AppColors.buttonColor,
-                                ],
-                              )),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 5, vertical: 5),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Add New Card",
-                                      style: TextStyle(
-                                          fontSize: 17,
-                                          fontWeight: FontWeight.w600,
-                                          color: AppColors.backgroundColor),
-                                    ),
-                                    SizedBox(
-                                      height: 3,
-                                    ),
-                                    Text(
-                                      "You can add new card to\nTapCash in a minute",
-                                      style: TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w400,
-                                          color: AppColors.textColor),
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding:
-                                      EdgeInsets.only(right: context.width * .1),
-                                  child: Image.asset(AssetManager.visaImage),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
+                      const AddNewCardContainer(),
                       Padding(
                         padding:
                             EdgeInsets.only(top: 5, left: context.height * .02),
@@ -337,132 +180,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        
       ),
     );
   }
 }
-
-//
-//! Code for Svg File 
-/*
-body: Center(child: Text("FingerPrint : ${cubit.fingerPrint}")),
-        bottomNavigationBar:BottomNavigationBar(
-          fixedColor: AppColors.buttonColor,
-          items:[
-          BottomNavigationBarItem(icon:
-          !Here is The svg file 
-           SvgPicture.asset(
-    IconManager.homeIcon,
-    height: 22,
-    color: currentIndex == 0 ?   AppColors.buttonColor : Colors.black ,
-
-  ),
-  label: "Home"
-  ),
-  BottomNavigationBarItem(icon: SvgPicture.asset(
-    IconManager.expensesIcon, 
-    height: 22,
-    color: Colors.black,
-  ),
-  label: "expenses"
-  )
-
-        ])
- */
-///crop free  //Monitoring
-
-
-/*
-import 'package:flutter/material.dart';
-import 'package:local_auth/local_auth.dart';
-
-class FingerprintScreen extends StatefulWidget {
-  @override
-  _FingerprintScreenState createState() => _FingerprintScreenState();
-}
-
-class _FingerprintScreenState extends State<FingerprintScreen> {
-  final LocalAuthentication _localAuthentication = LocalAuthentication();
-  bool _isFingerprintEnabled = false;
-  String _authError = '';
-
-  Future<void> _checkBiometrics() async {
-    bool canCheckBiometrics;
-    try {
-      canCheckBiometrics = await _localAuthentication.canCheckBiometrics;
-    } catch (e) {
-      setState(() {
-        _authError = 'Error: $e';
-      });
-      return;
-    }
-
-    setState(() {
-      _isFingerprintEnabled = canCheckBiometrics;
-    });
-  }
-
-  Future<void> _authenticate() async {
-    bool isAuthenticated = false;
-
-    try {
-      isAuthenticated = await _localAuthentication.authenticate(
-        localizedReason: 'Please authenticate to access your account',
-        useErrorDialogs: true,
-        stickyAuth: true,
-      );
-    } catch (e) {
-      setState(() {
-        _authError = 'Error: $e';
-      });
-      return;
-    }
-
-    if (isAuthenticated) {
-      // Fingerprint authentication successful
-      // Now you can insert the fingerprint data into your database
-    } else {
-      setState(() {
-        _authError = 'Authentication failed';
-      });
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _checkBiometrics();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Fingerprint Authentication'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              _isFingerprintEnabled
-                  ? 'Fingerprint authentication enabled'
-                  : 'Fingerprint authentication not available',
-            ),
-            SizedBox(height: 20),
-            RaisedButton(
-              onPressed: _isFingerprintEnabled ? _authenticate : null,
-              child: Text('Authenticate'),
-            ),
-            SizedBox(height: 20),
-            Text(_authError),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-
- */
