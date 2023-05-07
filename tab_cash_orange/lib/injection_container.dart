@@ -32,5 +32,6 @@ Future<void> init() async{
   sl.registerLazySingleton(() => AppInterceptors());
   sl.registerLazySingleton(() => LogInterceptor());
 
+  
 
 }
