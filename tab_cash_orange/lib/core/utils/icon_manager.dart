@@ -9,6 +9,7 @@ class IconManager {
   static const String gamesIcon = '$_base/games.svg';
   static const String walletIcon = '$_base/Wallet.svg';
   static const String expensesIcon = '$_base/expenses.svg';
+  static const String editIcon = '$_base/edit.png';
   
 
 

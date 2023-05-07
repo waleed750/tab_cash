@@ -51,6 +51,14 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
   
   ];
 
-    
+   bool notif_status =true ;
+  
+   void changeNotificationStatus ()
+   {
+     emit(NotificationInitiateState());
+     notif_status =!notif_status ;
+     print(notif_status);
+     emit(NotificationChangeState());
+   } 
     
   }

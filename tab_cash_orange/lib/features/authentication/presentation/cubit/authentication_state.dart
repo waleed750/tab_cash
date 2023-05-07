@@ -66,3 +66,6 @@ class GamesErrorState extends AuthenticationState{
   GamesErrorState(this.error);
 }
  
+class NotificationInitiateState extends AuthenticationState {}
+
+ class NotificationChangeState extends AuthenticationState {}

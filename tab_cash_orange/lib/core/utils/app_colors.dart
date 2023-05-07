@@ -15,4 +15,5 @@ class AppColors {
   static Color redOrange = HexColor('F92729');
   static Color wing = HexColor('FF8321');
   static Color textColor = Colors.grey.shade300;
+  static Color indicatorColor =Colors.grey.shade500 ;
 }
