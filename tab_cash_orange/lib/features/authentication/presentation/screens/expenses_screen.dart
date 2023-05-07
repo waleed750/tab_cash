@@ -111,27 +111,7 @@ class ExpensesScreen extends StatelessWidget {
                 const SizedBox(
                   height: 15.0,
                 ),
-                Center(child: ToggleSwitch(
-          minWidth: 90.0,
-          cornerRadius: 20.0,
-          activeBgColors: [
-            [AppColors.buttonColor],
-            [AppColors.buttonColor]
-          ],
-          activeFgColor: Colors.white,
-          inactiveBgColor: AppColors.disabledColor,
-          inactiveFgColor: Colors.white,
-          initialLabelIndex: cubit.labelIndex,
-          totalSwitches: 2,
-          labels: [
-            AppLocalizations.of(context)!.translate(AppStrings.categorie)!,
-            AppLocalizations.of(context)!.translate(AppStrings.history)!
-          ],
-          radiusStyle: true,
-          onToggle: (index) {
-              print(index);
-          },
-        )),
+                switchButton(context),
                 //!!!!!!!!!!!!!!!!!! Cards 
                 if(cubit.labelIndex == 0 )...[
                     Container(
@@ -157,6 +137,34 @@ class ExpensesScreen extends StatelessWidget {
                       iconPath: IconManager.games_2Icon,
                       expenses: 500,
                       color: HexColor('FE6C6C')),
+                      
+                    ],
+                  ),
+                ),
+                 Container(
+                  margin: EdgeInsets.symmetric(
+                          horizontal: context.width * 0.04 ,
+                          
+                        ),
+                  child: Row(
+                    children: [
+                     cardWidget(context,
+                      color: HexColor('FDCD95') ,
+                      title: AppStrings.paymentOfBills , 
+                      iconPath: IconManager.billsIcon
+                      ),
+                      cardWidget(context,
+                      title: AppStrings.atmWithDrawal,
+                      color: HexColor('FFF972'),
+                      expenses: 400 ,
+                      iconPath: IconManager.atmIcon,
+                      ),
+                      cardWidget(context,
+                      title: AppStrings.shipping,
+                      iconPath: IconManager.shippingIcon,
+                      expenses: 500,
+                      color: HexColor('99FFA3')),
+                      
                     ],
                   ),
                 ),

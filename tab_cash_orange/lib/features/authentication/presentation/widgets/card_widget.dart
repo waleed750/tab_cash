@@ -31,9 +31,11 @@ Widget cardWidget(BuildContext context , {
             fit: BoxFit.fitHeight,
             ) , 
           const SizedBox(height: 5.0,),
-          Text("${AppLocalizations.of(context)!.translate(title)??title}" , style: const TextStyle(
-            fontSize: 14.0 , fontWeight: FontWeight.bold ,overflow: TextOverflow.ellipsis
-          ),),
+          FittedBox(
+            child: Text("${AppLocalizations.of(context)!.translate(title)??title}" , style: const TextStyle(
+              fontSize: 14.0 , fontWeight: FontWeight.bold ,
+            ),),
+          ),
           const SizedBox(height: 5.0,),
           Text("\$$expenses" , style: const TextStyle(
             fontSize: 20.0 , fontWeight: FontWeight.bold ,

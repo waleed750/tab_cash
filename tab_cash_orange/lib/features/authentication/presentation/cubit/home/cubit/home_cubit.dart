@@ -33,7 +33,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   void switchButton(){
     emit(HomeSwitchButtonStartState());
-    labelIndex = labelIndex != 0 ? 1 : 0 ;
+    labelIndex = labelIndex == 0 ? 1 : 0 ;
     emit(HomeSwitchButtonEndState());
   }
 }
