@@ -5,11 +5,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tab_cash_orange/core/utils/app_colors.dart';
 import 'package:tab_cash_orange/core/utils/asset_manager.dart';
 import 'package:tab_cash_orange/core/utils/icon_manager.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/cubit/authentication_cubit.dart';
 import 'package:tab_cash_orange/core/utils/media_extension.dart';
 // import 'package:tab_cash_orange/core/utils/AppColors.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/hex_color.dart';
+import '../cubit/home_cubit.dart';
 import '../widgets/add_new_card_container.dart';
 import '../widgets/circle_dot.dart';
 import '../widgets/person_container.dart';
@@ -22,8 +22,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cubit = BlocProvider.of<Home2Cubit>(context);
-    return BlocListener<Home2Cubit, Home2State>(
+    var cubit = BlocProvider.of<HomeCubit>(context);
+    return BlocListener<HomeCubit, Homestates>(
       listener: (BuildContext context, state) {},
       child: Scaffold(
         backgroundColor: AppColors.buttonColor,

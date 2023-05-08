@@ -7,7 +7,6 @@ import 'package:tab_cash_orange/config/localization/app_localizations.dart';
 import 'package:tab_cash_orange/core/utils/app_strings.dart';
 import 'package:tab_cash_orange/core/utils/hex_color.dart';
 import 'package:tab_cash_orange/core/utils/icon_manager.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/widgets/card_widget.dart';
 import 'package:tab_cash_orange/features/expenses/expenses_widget.dart';
 import 'package:tab_cash_orange/core/utils/media_extension.dart';
 import 'package:toggle_switch/toggle_switch.dart';
@@ -18,6 +17,7 @@ import 'package:intl/intl.dart';
 
 import '../cubit/expenses/cubit/expenses_cubit.dart';
 import '../cubit/expenses/cubit/expenses_states.dart';
+import '../widgets/card_widget.dart';
 import '../widgets/switch_button.dart';
 
 class ExpensesScreen extends StatelessWidget {

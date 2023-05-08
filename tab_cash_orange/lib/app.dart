@@ -6,7 +6,7 @@ import 'package:tab_cash_orange/core/utils/app_strings.dart';
 import 'config/localization/app_localizations.dart';
 import 'config/localization/app_localizations_setup.dart';
 import 'config/routes/app_routes.dart';
-import 'features/authentication/presentation/cubit/expenses/cubit/expenses_cubit.dart';
+import 'features/home/presentation/cubit/expenses/cubit/expenses_cubit.dart';
 import 'injection_container.dart' as di ;
 class MyApp extends StatelessWidget {
 

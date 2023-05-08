@@ -4,19 +4,18 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/screens/expenses_screen.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/icon_manager.dart';
-import '../cubit/authentication_cubit.dart';
+import '../cubit/home_cubit.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var cubit = BlocProvider.of<Home2Cubit>(context);
-    return BlocConsumer<Home2Cubit, Home2State>(
+    var cubit = BlocProvider.of<HomeCubit>(context);
+    return BlocConsumer<HomeCubit, Homestates>(
       listener: (BuildContext context, state) {},
       builder: (context, state) => Scaffold(
         appBar: null,

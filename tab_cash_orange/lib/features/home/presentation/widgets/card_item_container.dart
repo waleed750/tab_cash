@@ -8,7 +8,7 @@ import 'package:tab_cash_orange/core/utils/media_extension.dart';
 import '../../../../core/utils/app_colors.dart';
 
 
-import '../cubit/authentication_cubit.dart';
+import '../cubit/home_cubit.dart';
 class CardItemContainer extends StatelessWidget {
    CardItemContainer({
     super.key,
@@ -23,8 +23,8 @@ class CardItemContainer extends StatelessWidget {
   final bool? notif ;
   @override
   Widget build(BuildContext context) {
-    var cubit = BlocProvider.of<Home2Cubit>(context);
-    return BlocListener<Home2Cubit, Home2State>(
+    var cubit = BlocProvider.of<HomeCubit>(context);
+    return BlocListener<HomeCubit, Homestates>(
       listener: (BuildContext context, state) {},
       child: Column(
         children: [

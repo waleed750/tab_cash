@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/cubit/authentication_cubit.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/screens/home_screen.dart';
 
 import '../../core/utils/app_strings.dart';
-import '../../features/authentication/presentation/screens/main_screen.dart';
+import '../../features/home/presentation/cubit/home_cubit.dart';
+import '../../features/home/presentation/screens/main_screen.dart';
 import '../../features/login/presentation/screens/splash_screen.dart';
 
 class Routes {
@@ -22,7 +21,7 @@ class AppRoutes {
       case Routes.homeRoute:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
-              create: (context) => Home2Cubit() ,
+              create: (context) => HomeCubit() ,
               child:  MainScreen(), 
         ));
       default:

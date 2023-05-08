@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/widgets/indicator_container.dart';
 
 import '../../../../core/utils/app_colors.dart';
+import 'indicator_container.dart';
 
 class PaymentCardContainer extends StatelessWidget {
   const PaymentCardContainer({super.key});
