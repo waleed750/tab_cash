@@ -10,5 +10,17 @@
   "reload_screen": "Reload Screen",
   "want_to_logout": "Do you want to logout ?",
   "logout": "Logout" , 
-  "undefined_route" : "Undefined Route"
+  "undefined_route" : "Undefined Route",
+
+  "expense_title":"Expenses",
+  "categorie":"Categorie",
+  "history":"History" ,
+  "shopping":"Shopping" ,
+  "shipping":"Shipping" ,
+  "send_to_card":"Send to card",
+  "games" : "Games" ,
+  "payment_of_bills":"Payment of bills",
+  "atm_withdrawal":"ATM withdrawal"
+  
+  
 }

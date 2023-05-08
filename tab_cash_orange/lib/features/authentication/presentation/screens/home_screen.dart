@@ -36,6 +36,8 @@ class HomeScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
         ),
         body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          scrollDirection: Axis.vertical,
           child: Column(
             children: [
               Container(

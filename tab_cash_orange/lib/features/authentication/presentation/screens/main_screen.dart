@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tab_cash_orange/features/authentication/presentation/screens/expenses_screen.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/icon_manager.dart';
@@ -18,6 +19,7 @@ class MainScreen extends StatelessWidget {
     return BlocConsumer<AuthenticationCubit, AuthenticationState>(
       listener: (BuildContext context, state) {},
       builder: (context, state) => Scaffold(
+        appBar: null,
         body: cubit.Screens[cubit.currentIndex],
         bottomNavigationBar: BottomNavigationBar(
             showUnselectedLabels: true,
@@ -26,41 +28,51 @@ class MainScreen extends StatelessWidget {
             currentIndex: cubit.currentIndex,
             items: [
               BottomNavigationBarItem(
-        icon: SvgPicture.asset(
-    IconManager.homeIcon,
-    height: 18,
-    color: cubit.currentIndex == 0 ?   AppColors.buttonColor : Colors.black ,
-    
-  ),
-        label: "Home",
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(
-          Icons.home_outlined,
-      ),
-      label: "Cards"
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(
-          Icons.home_outlined,
-      ),
-      label: "services"
-    ),
-
-   BottomNavigationBarItem(
-      icon: Icon(
-          Icons.home_outlined,
-      ),
-      label: "Expenses"
-    ),
-
-     BottomNavigationBarItem(
-      icon: Icon(
-          Icons.home_outlined,
-      ),
-      label: "Games"
-    ),
-   
+                icon: SvgPicture.asset(
+                  IconManager.homeIcon,
+                  height: 18,
+                  color: cubit.currentIndex == 0
+                      ? AppColors.buttonColor
+                      : Colors.black,
+                ),
+                label: "Home",
+              ),
+              BottomNavigationBarItem(
+                  icon: SvgPicture.asset(
+                    IconManager.walletIcon,
+                    height: 18,
+                    color: cubit.currentIndex == 1
+                        ? AppColors.buttonColor
+                        : Colors.black,
+                  ),
+                  label: "Cards"),
+              BottomNavigationBarItem(
+                  icon: SvgPicture.asset(
+                    IconManager.categoryIcon,
+                    height: 18,
+                    color: cubit.currentIndex == 2
+                        ? AppColors.buttonColor
+                        : Colors.black,
+                  ),
+                  label: "services"),
+              BottomNavigationBarItem(
+                  icon: SvgPicture.asset(
+                    IconManager.expensesIcon,
+                    height: 18,
+                    color: cubit.currentIndex == 3
+                        ? AppColors.buttonColor
+                        : Colors.black,
+                  ),
+                  label: "Expenses"),
+              BottomNavigationBarItem(
+                  icon: SvgPicture.asset(
+                    IconManager.gamesIcon,
+                    height: 18,
+                    color: cubit.currentIndex == 4
+                        ? AppColors.buttonColor
+                        : Colors.black,
+                  ),
+                  label: "Games"),
             ],
             onTap: (index) {
               cubit.ChangeBottomNavBar(index);

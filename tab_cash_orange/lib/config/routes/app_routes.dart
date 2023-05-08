@@ -5,7 +5,7 @@ import 'package:tab_cash_orange/features/authentication/presentation/screens/hom
 
 import '../../core/utils/app_strings.dart';
 import '../../features/authentication/presentation/screens/main_screen.dart';
-import '../../features/authentication/presentation/screens/splash_screen.dart';
+import '../../features/login/presentation/screens/splash_screen.dart';
 
 class Routes {
   static const String initialRoute = '/';
