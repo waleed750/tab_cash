@@ -20,10 +20,8 @@ class AppRoutes {
         );
       case Routes.homeRoute:
         return MaterialPageRoute(
-            builder: (context) => BlocProvider(
-              create: (context) => HomeCubit() ,
-              child:  MainScreen(), 
-        ));
+            builder: (context) => MainScreen(), 
+        );
       default:
         return onUndefinedRoute();
     }
