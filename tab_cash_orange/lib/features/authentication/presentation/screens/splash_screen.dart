@@ -24,5 +24,5 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 
-  void goNext() => Navigator.pushReplacementNamed(context, Routes.homeRoute);
+  void goNext() => Navigator.pushNamedAndRemoveUntil(context, Routes.homeRoute ,(route) => false,);
 }
