@@ -2,10 +2,13 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-part 'home_state.dart';
 
-class HomeCubit extends Cubit<HomeState> {
-  HomeCubit() : super(HomeInitial());
+import 'expenses_states.dart';
+
+
+
+class ExpensesCubit extends Cubit<ExpensesState> {
+  ExpensesCubit() : super(ExpensesInitial());
 
   DateTime selectedDate = DateTime.now();
   var selectedDateString =DateFormat('MMMM yyyy').format(DateTime.now()); 
@@ -13,7 +16,7 @@ class HomeCubit extends Cubit<HomeState> {
   int labelIndex = 0 ; //! For Switch Button
 
   Future<void> changeMonth(BuildContext context ) async{
-    emit(HomeChangeMonthStartState());
+    emit(ExpensesChangeMonthStartState());
     final DateTime initialDate =   selectedDate ;
               final DateTime firstDate = DateTime(2023);
               final DateTime lastDate = DateTime(2100);
@@ -27,13 +30,13 @@ class HomeCubit extends Cubit<HomeState> {
      selectedDate = value!;
       selectedDateString = DateFormat('MMMM yyyy').format(selectedDate);
                      
-    emit(HomeChangeMonthEndState());
+    emit(ExpensesChangeMonthEndState());
 
   }
 
   void switchButton(){
-    emit(HomeSwitchButtonStartState());
+    emit(ExpensesSwitchButtonStartState());
     labelIndex = labelIndex == 0 ? 1 : 0 ;
-    emit(HomeSwitchButtonEndState());
+    emit(ExpensesSwitchButtonEndState());
   }
 }

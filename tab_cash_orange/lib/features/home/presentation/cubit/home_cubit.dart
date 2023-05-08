@@ -13,16 +13,16 @@ import '../screens/expenses_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/services_screen.dart';
 
-part 'authentication_state.dart';
+part 'home_state.dart';
 
-class AuthenticationCubit extends Cubit<AuthenticationState> {
-  AuthenticationCubit() : super(AuthenticationInitial());
+class HomeCubit extends Cubit<Homestates> {
+  HomeCubit() : super(HomeInitial());
 
-  // static AuthenticationCubit get(context)=> BlocProvider.of(context);
+  // static HomeCubit get(context)=> BlocProvider.of(context);
 
   String fingerPrint = "empty";
   void checkFingerPrint(){
-    emit(AuthenticationCheckFingerPrintLoading());
+    emit(HomeCheckFingerPrintLoading());
   }
     //code for finger PRint 
     

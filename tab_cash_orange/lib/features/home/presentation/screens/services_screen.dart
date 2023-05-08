@@ -3,11 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:tab_cash_orange/core/utils/media_extension.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/widgets/card_item_container.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/widgets/search_container.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/icon_manager.dart';
+import '../widgets/card_item_container.dart';
 import '../widgets/search_form_field.dart';
 
 class ServicesScreeen extends StatelessWidget {

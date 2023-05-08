@@ -4,9 +4,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:tab_cash_orange/core/utils/hex_color.dart';
 import 'package:tab_cash_orange/core/utils/media_extension.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/widgets/person_container.dart';
 
 import '../../../../core/utils/app_colors.dart';
+import 'person_container.dart';
 
 class TransformationContainer extends StatelessWidget {
   const TransformationContainer({super.key});

@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tab_cash_orange/config/localization/app_localizations.dart';
 import 'package:tab_cash_orange/core/utils/app_colors.dart';
 import 'package:tab_cash_orange/core/utils/app_strings.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/cubit/home/cubit/home_cubit.dart';
+
 import 'package:toggle_switch/toggle_switch.dart';
+
+import '../cubit/expenses/cubit/expenses_cubit.dart';
 
 Widget switchButton(BuildContext context) =>
         Center(
@@ -18,7 +20,7 @@ Widget switchButton(BuildContext context) =>
             activeFgColor: Colors.white,
             inactiveBgColor: AppColors.disabledColor,
             inactiveFgColor: Colors.white,
-            initialLabelIndex: BlocProvider.of<HomeCubit>(context).labelIndex,
+            initialLabelIndex: BlocProvider.of<ExpensesCubit>(context).labelIndex,
             totalSwitches: 2,
             labels: [
               AppLocalizations.of(context)!.translate(AppStrings.categorie)!,
@@ -26,7 +28,7 @@ Widget switchButton(BuildContext context) =>
             ],
             radiusStyle: true,
             onToggle: (index) {
-              BlocProvider.of<HomeCubit>(context).switchButton();
+              BlocProvider.of<ExpensesCubit>(context).switchButton();
             },
           ),
         );

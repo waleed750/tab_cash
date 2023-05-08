@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:tab_cash_orange/core/utils/media_extension.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/widgets/search_form_field.dart';
 
 import '../../../../core/utils/app_colors.dart';
+import 'search_form_field.dart';
 
 class SearchContainer extends StatelessWidget {
   const SearchContainer({super.key, required this.searchController});

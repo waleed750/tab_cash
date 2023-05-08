@@ -4,16 +4,17 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tab_cash_orange/core/utils/media_extension.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/widgets/visa_cart_container.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/icon_manager.dart';
-import '../cubit/authentication_cubit.dart';
+import '../cubit/home_cubit.dart';
 import '../widgets/card_item_container.dart';
 import '../widgets/indicator_container.dart';
 import '../widgets/payment_card_container.dart';
 import '../widgets/search_container.dart';
 import 'package:tab_cash_orange/core/utils/asset_manager.dart';
+
+import '../widgets/visa_cart_container.dart';
 class CardsScreen extends StatelessWidget {
   CardsScreen({super.key});
 
@@ -21,8 +22,8 @@ class CardsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cubit = BlocProvider.of<AuthenticationCubit>(context);
-    return BlocListener<AuthenticationCubit, AuthenticationState>(
+    var cubit = BlocProvider.of<HomeCubit>(context);
+    return BlocListener<HomeCubit, Homestates>(
         listener: (BuildContext context, state) {},
         child: Scaffold(
           backgroundColor: AppColors.buttonColor,
