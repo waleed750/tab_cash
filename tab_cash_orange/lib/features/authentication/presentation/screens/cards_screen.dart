@@ -91,7 +91,7 @@ class CardsScreen extends StatelessWidget {
                                   subTitle: "Validity / duration of use",
                                 ),
                                 CardItemContainer(
-                                  icon: Icons.people_alt_sharp,
+                                  icon: Icons.diversity_3_rounded,
                                   title: "Family Wallet ",
                                   subTitle: "Create and delete your family card",
                                 ),

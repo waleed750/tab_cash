@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
+import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/hex_color.dart';
 
 
@@ -15,6 +16,7 @@ class SearchFormField extends StatelessWidget {
   final double? height;
   final String hintText; 
   final TextInputType type;
+
 
    SearchFormField({
     super.key,
@@ -35,6 +37,11 @@ class SearchFormField extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
+        decoration: BoxDecoration(
+          
+          border: Border.all(color: AppColors.buttonColor),
+          borderRadius: BorderRadius.circular(10)
+        ),
         child: TextFormField(
           maxLines: 1,
           controller: controller,
@@ -48,7 +55,7 @@ class SearchFormField extends StatelessWidget {
             prefixIcon: prefixIcon,
             hintText: hintText,
             hintStyle: TextStyle(
-                color: HexColor("#5A5A5A"),
+                color: AppColors.searchColor,
                  fontSize: 15,
                   fontWeight: FontWeight.w500,
                   height: 3

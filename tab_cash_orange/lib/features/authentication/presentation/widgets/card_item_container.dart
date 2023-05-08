@@ -13,12 +13,12 @@ class CardItemContainer extends StatelessWidget {
     super.key,
     required this.icon,
     required this.title,
-    required this.subTitle,
+    this.subTitle,
     this.notif ,
     });
   final icon ;
   final title ;
-  final subTitle ;
+  final String ?subTitle ;
   final bool? notif ;
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,21 @@ class CardItemContainer extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
-                    child: Column(
+                    child: subTitle == null ?
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "${title}",
+                            style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.defaultColor),
+                          ),
+                         
+                        ])
+                    :
+                    Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
