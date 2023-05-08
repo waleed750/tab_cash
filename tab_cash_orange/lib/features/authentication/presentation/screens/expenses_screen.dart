@@ -15,7 +15,9 @@ import 'package:toggle_switch/toggle_switch.dart';
 import '../../../../core/utils/app_colors.dart';
 import 'package:intl/intl.dart';
 
-import '../cubit/home/cubit/home_cubit.dart';
+
+import '../cubit/expenses/cubit/expenses_cubit.dart';
+import '../cubit/expenses/cubit/expenses_states.dart';
 import '../widgets/switch_button.dart';
 
 class ExpensesScreen extends StatelessWidget {
@@ -24,12 +26,12 @@ class ExpensesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<HomeCubit, HomeState>(
+    return BlocConsumer<ExpensesCubit, ExpensesState>(
       listener: (context, state) {
         
       },
       builder: (context, state) {
-        var cubit = BlocProvider.of<HomeCubit>(context);
+        var cubit = BlocProvider.of<ExpensesCubit>(context);
         return Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,

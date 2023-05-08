@@ -15,8 +15,8 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cubit = BlocProvider.of<AuthenticationCubit>(context);
-    return BlocConsumer<AuthenticationCubit, AuthenticationState>(
+    var cubit = BlocProvider.of<Home2Cubit>(context);
+    return BlocConsumer<Home2Cubit, Home2State>(
       listener: (BuildContext context, state) {},
       builder: (context, state) => Scaffold(
         appBar: null,

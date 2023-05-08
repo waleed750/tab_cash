@@ -22,8 +22,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cubit = BlocProvider.of<AuthenticationCubit>(context);
-    return BlocListener<AuthenticationCubit, AuthenticationState>(
+    var cubit = BlocProvider.of<Home2Cubit>(context);
+    return BlocListener<Home2Cubit, Home2State>(
       listener: (BuildContext context, state) {},
       child: Scaffold(
         backgroundColor: AppColors.buttonColor,

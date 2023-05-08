@@ -8,15 +8,15 @@ import 'package:tab_cash_orange/core/network/network_info.dart';
 import 'package:tab_cash_orange/features/authentication/presentation/cubit/authentication_cubit.dart';
 
 import 'core/api/app_interceptors.dart';
-import 'features/authentication/presentation/cubit/home/cubit/home_cubit.dart';
+import 'features/authentication/presentation/cubit/expenses/cubit/expenses_cubit.dart';
 
 GetIt sl = GetIt.instance;
 
 Future<void> init() async{
   //! Features
   //Bloc
-  sl.registerLazySingleton<AuthenticationCubit>(() => AuthenticationCubit());
-  sl.registerLazySingleton<HomeCubit>(() => HomeCubit());
+  sl.registerLazySingleton<Home2Cubit>(() => Home2Cubit());
+  sl.registerLazySingleton<ExpensesCubit>(() => ExpensesCubit());
 
 
 

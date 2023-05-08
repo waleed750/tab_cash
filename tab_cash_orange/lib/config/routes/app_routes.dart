@@ -22,7 +22,7 @@ class AppRoutes {
       case Routes.homeRoute:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
-              create: (context) => AuthenticationCubit() ,
+              create: (context) => Home2Cubit() ,
               child:  MainScreen(), 
         ));
       default:

@@ -15,10 +15,10 @@ import '../screens/services_screen.dart';
 
 part 'authentication_state.dart';
 
-class AuthenticationCubit extends Cubit<AuthenticationState> {
-  AuthenticationCubit() : super(AuthenticationInitial());
+class Home2Cubit extends Cubit<Home2State> {
+  Home2Cubit() : super(AuthenticationInitial());
 
-  // static AuthenticationCubit get(context)=> BlocProvider.of(context);
+  // static Home2Cubit get(context)=> BlocProvider.of(context);
 
   String fingerPrint = "empty";
   void checkFingerPrint(){
