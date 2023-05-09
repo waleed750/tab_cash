@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tab_cash_orange/config/localization/app_localizations_delegate.dart';
 import 'package:tab_cash_orange/core/utils/app_strings.dart';
+import 'package:tab_cash_orange/features/authentication/presentation/cubit/login_cubit.dart';
 import 'package:tab_cash_orange/features/home/presentation/cubit/home_cubit.dart';
 
 import 'config/localization/app_localizations.dart';
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => di.sl<ExpensesCubit>()),
         BlocProvider(create: (context)=> di.sl<HomeCubit>()),
+        BlocProvider(create: (context)=> di.sl<LoginCubit>()),
+
+
         
       ],
       child: const MaterialApp(

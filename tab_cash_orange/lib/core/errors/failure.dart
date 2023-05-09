@@ -26,3 +26,18 @@ class CacheFailure implements Failure{
   bool? get stringify => throw UnimplementedError();
 
 }
+
+class UndefinedFailure implements Failure {
+  String error;
+  UndefinedFailure({
+    required this.error,
+  });
+  @override
+  // TODO: implement props
+  List<Object> get props => [];
+
+  @override
+  // TODO: implement stringify
+  bool? get stringify => throw UnimplementedError();
+
+}

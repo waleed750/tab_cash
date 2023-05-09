@@ -5,11 +5,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tab_cash_orange/core/utils/app_colors.dart';
 import 'package:tab_cash_orange/core/utils/asset_manager.dart';
 import 'package:tab_cash_orange/core/utils/icon_manager.dart';
-import 'package:tab_cash_orange/features/authentication/presentation/cubit/authentication_cubit.dart';
 import 'package:tab_cash_orange/core/utils/media_extension.dart';
+import 'package:tab_cash_orange/features/home/presentation/cubit/home_cubit.dart';
 // import 'package:tab_cash_orange/core/utils/AppColors.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/hex_color.dart';
+import '../../../expenses/history_widget.dart';
 import '../widgets/add_new_card_container.dart';
 import '../widgets/circle_dot.dart';
 import '../widgets/feature_container.dart';
@@ -24,8 +25,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cubit = BlocProvider.of<AuthenticationCubit>(context);
-    return BlocListener<AuthenticationCubit, AuthenticationState>(
+    var cubit = BlocProvider.of<HomeCubit>(context);
+    return BlocListener<HomeCubit, Homestates>(
       listener: (BuildContext context, state) {},
       child: Scaffold(
         backgroundColor: AppColors.buttonColor,
@@ -134,7 +135,7 @@ class HomeScreen extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                height: context.height * .5,
+                height: context.height * .51,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(25),
@@ -236,7 +237,23 @@ class HomeScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        
+                        HistoryWidget(
+                    expenses: 14.91,
+                    icon: Icons.shopping_bag_outlined,
+                     title: "Shopping",
+                      subTitle: 'August 14 - 02:50 pm'),
+                  HistoryWidget(
+                    expenses: 85.84,
+                    icon: Icons.local_movies,
+                     title: "Movie",
+                      subTitle: 'August 14 - 02:50 pm'),
+                     HistoryWidget(
+                    expenses: 60.89,
+                    received: true,
+                    icon: Icons.local_movies,
+                    title: "Transfer from Waleed",
+                    subTitle: 'August 14 - 02:50 pm'),
+                    SizedBox(height: 5.0,)
                       ]),
                 ),
               ),

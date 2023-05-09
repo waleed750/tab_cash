@@ -38,7 +38,7 @@ class DefaultButton extends StatelessWidget {
                   context.topPadding * 0.3
                 ),
                 child:  Center(
-                      child: Text("Button" , style: TextStyle(
+                      child: Text(text , style: TextStyle(
                         color: AppColors.backgroundColor , 
                         fontSize: 16.0,
                         fontWeight: FontWeight.w700 , 

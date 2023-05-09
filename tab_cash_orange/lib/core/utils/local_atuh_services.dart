@@ -1,11 +1,13 @@
 import 'package:local_auth/local_auth.dart';
+import 'package:tab_cash_orange/core/errors/exceptions.dart';
+import 'package:tab_cash_orange/core/errors/failure.dart';
 
 class Services {
   final LocalAuthentication _localAuthentication = LocalAuthentication();
   bool _isFingerprintEnabled = false;
   String _authError = '';
 
-  Future<void> _checkBiometrics() async {
+  Future<bool> checkBiometrics() async {
     bool canCheckBiometrics;
     try {
       
@@ -13,12 +15,13 @@ class Services {
       
     } catch (e) {
         _authError = 'Error: $e';      
-      return;
+        throw(UndefinedException(error: "Check BioMetrics Error"));
     }
       _isFingerprintEnabled = canCheckBiometrics;
+      return canCheckBiometrics;
   }
 
-  Future<void> _authenticate() async {
+  Future<bool> authenticate() async {
     bool isAuthenticated = false;
 
     try {
@@ -30,23 +33,19 @@ class Services {
         )
         
       );
-      if(isAuthenticated){
-
-      }else{
-        
-      }
+      return isAuthenticated;
     } catch (e) {
       
         _authError = 'Error: $e';
         print(_authError);
-      return;
+        throw(UndefinedException(error: _authError.toString()));
     }
 
-    if (isAuthenticated) {
-      // Fingerprint authentication successful
-      // Now you can insert the fingerprint data into your database
-    } else {
-        _authError = 'Authentication failed';
-    }
+    // if (isAuthenticated) {
+    //   // Fingerprint authentication successful
+    //   // Now you can insert the fingerprint data into your database
+    // } else {
+    //     _authError = 'Authentication failed';
+    // }
   }
 }

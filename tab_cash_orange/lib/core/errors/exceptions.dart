@@ -43,3 +43,9 @@ class NoInternetConnectionException extends ServerException {
 class CacheException implements Exception {
 
 }
+class UndefinedException extends CacheException {
+  String error;
+  UndefinedException({
+    required this.error,
+  });
+}
