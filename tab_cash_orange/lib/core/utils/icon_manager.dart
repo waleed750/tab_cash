@@ -26,6 +26,9 @@ class IconManager {
 
 // 4f0c8e841d6b9ff859da19b43d66da494fccd323
   
-
+ static const String atmIconHome = '$_base/atm.png';
+  static const String gamesIconHome = '$_base/games.png';
+ static const String familyIcon = '$_base/family.png';
+ static const String switchIcon = '$_base/switch.png';
 
 }

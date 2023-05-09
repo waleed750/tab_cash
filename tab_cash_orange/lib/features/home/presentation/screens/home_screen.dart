@@ -5,13 +5,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tab_cash_orange/core/utils/app_colors.dart';
 import 'package:tab_cash_orange/core/utils/asset_manager.dart';
 import 'package:tab_cash_orange/core/utils/icon_manager.dart';
+import 'package:tab_cash_orange/features/authentication/presentation/cubit/authentication_cubit.dart';
 import 'package:tab_cash_orange/core/utils/media_extension.dart';
 // import 'package:tab_cash_orange/core/utils/AppColors.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/hex_color.dart';
-import '../cubit/home_cubit.dart';
 import '../widgets/add_new_card_container.dart';
 import '../widgets/circle_dot.dart';
+import '../widgets/feature_container.dart';
+import '../widgets/month_states_container.dart';
 import '../widgets/person_container.dart';
 import '../widgets/search_container.dart';
 import '../widgets/search_form_field.dart';
@@ -22,8 +24,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cubit = BlocProvider.of<HomeCubit>(context);
-    return BlocListener<HomeCubit, Homestates>(
+    var cubit = BlocProvider.of<AuthenticationCubit>(context);
+    return BlocListener<AuthenticationCubit, AuthenticationState>(
       listener: (BuildContext context, state) {},
       child: Scaffold(
         backgroundColor: AppColors.buttonColor,
@@ -36,8 +38,6 @@ class HomeScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
         ),
         body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          scrollDirection: Axis.vertical,
           child: Column(
             children: [
               Container(
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     const SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     SearchContainer(searchController: searchController),
                     const SizedBox(
@@ -141,43 +141,104 @@ class HomeScreen extends StatelessWidget {
                       topRight: Radius.circular(25)),
                   color: AppColors.backgroundColor,
                 ),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: context.height * .03,
-                            left: context.height * .02),
-                        child: Text(
-                          "Features",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: AppColors.black,
-                            fontWeight: FontWeight.w500,
+                child: SingleChildScrollView(
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: context.height * .03,
+                              left: context.height * .02),
+                          child: Text(
+                            "Features",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: AppColors.black,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: context.height * .12,
-                      ),
-                      const TransformationContainer(),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const AddNewCardContainer(),
-                      Padding(
-                        padding:
-                            EdgeInsets.only(top: 5, left: context.height * .02),
-                        child: Text(
-                          "Monthly stats",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: AppColors.black,
-                            fontWeight: FontWeight.w500,
+                        SizedBox(height: 10,),
+                         Padding(
+                           padding:  EdgeInsets.only(left: context.width*.05),
+                           child: SingleChildScrollView(
+                             scrollDirection: Axis.horizontal,
+                             child: Row(
+                               children: 
+                               [
+                                 FeatureContainer(icon: IconManager.atmIconHome ,name: "ATM withdrawal",),
+                                 SizedBox(width: 10,),
+                                 FeatureContainer(icon: IconManager.familyIcon ,name: "TabCash Kips",),
+                                 SizedBox(width: 10,),
+                                 FeatureContainer(icon: IconManager.gamesIconHome ,name: "Games",),
+                                 SizedBox(width: 10,),
+                                 FeatureContainer(icon: IconManager.switchIcon ,name: "Send menoy ",),
+                               ],
+                             ),
+                           ),
+                         ),
+                         SizedBox(height: context.height *.03,),
+                        const TransformationContainer(),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const AddNewCardContainer(),
+                        Padding(
+                          padding:
+                              EdgeInsets.only(top: 5, left: context.height * .03),
+                          child: Text(
+                            "Monthly stats",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: AppColors.black,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
-                      ),
-                    ]),
+                        
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Padding(
+                            padding:  EdgeInsets.only(left: context.width*.07,top: 5),
+                            child: Row(
+                              children: 
+                              [
+                               MonthStatesContainer(),
+                               SizedBox(width: 10,),
+                               MonthStatesContainer(),
+                              ],
+                            ),
+                          ),
+                        ),
+                        
+                        Padding(
+                          padding:  EdgeInsets.only(top: 5, left: context.height * .03,right: 5),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: 
+                            [
+                               Text(
+                                "August transactions",
+                                style: TextStyle(
+                                    color: AppColors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600),
+                              ),
+        
+                              Text(
+                                "View all",
+                                style: TextStyle(
+                                    color: AppColors.buttonColor,
+                                    fontSize: 16,
+                                    decoration: TextDecoration.underline,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
+                        ),
+                        
+                      ]),
+                ),
               ),
             ],
           ),
