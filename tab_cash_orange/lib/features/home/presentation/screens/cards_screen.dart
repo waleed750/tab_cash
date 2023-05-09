@@ -56,14 +56,15 @@ class CardsScreen extends StatelessWidget {
                     ),
                     Container(
                       width: double.infinity,
-                      height: context.height * .52,
+                      height: context.height * .54,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(28),
                             topRight: Radius.circular(28)),
                         color: AppColors.backgroundColor,
                       ),
                       child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
                         child: Padding(
                           padding: EdgeInsets.only(
                               top: context.height * .1,
@@ -107,6 +108,9 @@ class CardsScreen extends StatelessWidget {
                                   subTitle: "Notifications on your mobile",
                                   notif: true,
                                 ),
+                                SizedBox(
+                                  height: 10.0,
+                                )
                               ]),
                         ),
                       ),

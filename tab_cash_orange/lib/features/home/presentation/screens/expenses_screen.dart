@@ -9,6 +9,7 @@ import 'package:tab_cash_orange/core/utils/hex_color.dart';
 import 'package:tab_cash_orange/core/utils/icon_manager.dart';
 import 'package:tab_cash_orange/features/expenses/expenses_widget.dart';
 import 'package:tab_cash_orange/core/utils/media_extension.dart';
+import 'package:tab_cash_orange/features/expenses/history_widget.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 import '../../../../core/utils/app_colors.dart';
@@ -172,7 +173,50 @@ class ExpensesScreen extends StatelessWidget {
                 ),
                 ]
                 
-                
+                //!!!!!!!!!!!!!!!!!! History 
+                else if(cubit.labelIndex == 1)...[
+                  
+                  SizedBox(
+                    height: 20.0,
+                    child: Container(
+                      margin: EdgeInsets.symmetric(
+                        horizontal: 12.0
+                      ),
+
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Today' , 
+                          style: TextStyle(
+                            fontSize: 16.0
+                          ),
+                          ),
+                           Icon(
+                           Icons.search ,
+                           color: Colors.grey, 
+                          ),
+                      ]),
+                    ),
+                  ),
+
+                  HistoryWidget(
+                    expenses: 14.91,
+                    icon: Icons.shopping_bag_outlined,
+                     title: "Shopping",
+                      subTitle: 'August 14 - 02:50 pm'),
+                  HistoryWidget(
+                    expenses: 85.84,
+                    icon: Icons.local_movies,
+                     title: "Movie",
+                      subTitle: 'August 14 - 02:50 pm'),
+                     HistoryWidget(
+                    expenses: 60.89,
+                    received: true,
+                    icon: Icons.local_movies,
+                    title: "Transfer from Waleed",
+                    subTitle: 'August 14 - 02:50 pm'),
+                ] , 
+
               ],
             ),
           ),
