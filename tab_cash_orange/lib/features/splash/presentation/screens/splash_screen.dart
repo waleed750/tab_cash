@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tab_cash_orange/config/routes/app_routes.dart';
 import 'package:tab_cash_orange/core/utils/asset_manager.dart';
 
@@ -20,7 +21,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Image.asset(AssetManager.logoImage)),
+      appBar: AppBar(
+            automaticallyImplyLeading: false,
+            centerTitle: true,
+            systemOverlayStyle: const SystemUiOverlayStyle(
+              statusBarIconBrightness: Brightness.dark,
+              statusBarColor: Colors.white,
+            ),
+            backgroundColor: Colors.white,
+            elevation: 0,
+            
+          ),
+      body: Center(child: Image.asset(AssetManager.logoImage2 , fit: BoxFit.cover,)),
     );
   }
 

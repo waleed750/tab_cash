@@ -3,9 +3,9 @@ import 'package:equatable/equatable.dart';
 
 import '../errors/failure.dart';
 
-abstract class UseCase<Type , Params> {
+abstract class UseCase<Type,Param> {
 
-  Future<Either<Failure , Type>> call(Params params);
+  Future<Either<Failure , Type>> call(Param params);
 }
 
 class NoParams extends Equatable{
@@ -14,3 +14,4 @@ class NoParams extends Equatable{
   List<Object?> get props => [];
 
 }
+

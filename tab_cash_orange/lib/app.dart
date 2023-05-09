@@ -15,14 +15,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context)=> di.sl<HomeCubit>()),
         BlocProvider(create: (context) => di.sl<ExpensesCubit>()),
+        BlocProvider(create: (context)=> di.sl<HomeCubit>()),
+        
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         
         title: AppStrings.appTitle,
-        initialRoute: Routes.homeRoute,
+        initialRoute: Routes.splashRoute,
         onGenerateRoute: AppRoutes.onGenerateRoute,
         locale: Locale(AppStrings.englishCode),
         supportedLocales: AppLocalizationsSetup.supportedLocales,

@@ -26,6 +26,9 @@ class AppStrings{
   static const String arabicCode = 'ar';
   static const String englishCode = 'en';
   static const String locale = 'locale';
-  
+
+  //!Error Messages
+  static const String cacheFailureMsg= 'Error Occured Please try again';
+   
 
 }
